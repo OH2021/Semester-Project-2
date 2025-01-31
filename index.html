@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auction Website</title>
+    <link
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dist/css/styles.css" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center">Auction Website</h1>
+
+      <!-- Registration Form -->
+      <div id="authSection">
+        <div class="mb-4">
+          <h2>Register</h2>
+          <form id="registerForm">
+            <div class="mb-3">
+              <label for="registerEmail" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="registerEmail"
+                placeholder="Enter your stud.noroff.no email"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="registerPassword" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="registerPassword"
+                placeholder="Enter your password"
+              />
+            </div>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="registerUser()"
+            >
+              Register
+            </button>
+          </form>
+        </div>
+
+        <!-- Login Form -->
+        <div class="mb-4">
+          <h2>Login</h2>
+          <form id="loginForm">
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="loginEmail"
+                placeholder="Enter your email"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="loginPassword"
+                placeholder="Enter your password"
+              />
+            </div>
+            <button type="button" class="btn btn-primary" onclick="loginUser()">
+              Login
+            </button>
+          </form>
+        </div>
+
+        <!-- Logout Button -->
+        <div class="mb-4">
+          <button type="button" class="btn btn-danger" onclick="logoutUser()">
+            Log Out
+          </button>
+        </div>
+      </div>
+
+      <!-- Avatar Update -->
+      <div id="avatarSection" class="mb-4">
+        <h2>Update Avatar</h2>
+        <input
+          type="text"
+          class="form-control mb-2"
+          id="avatarUrl"
+          placeholder="Enter avatar URL"
+        />
+        <button type="button" class="btn btn-primary" onclick="updateAvatar()">
+          Update Avatar
+        </button>
+      </div>
+
+      <!-- Create Listing -->
+      <div id="createListingSection" class="mb-4">
+        <h2>Create Listing</h2>
+        <form id="createListingForm">
+          <div class="mb-3">
+            <label for="listingTitle" class="form-label">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="listingTitle"
+              placeholder="Enter listing title"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="listingDeadline" class="form-label">Deadline</label>
+            <input type="date" class="form-control" id="listingDeadline" />
+          </div>
+          <div class="mb-3">
+            <label for="listingDescription" class="form-label"
+              >Description</label
+            >
+            <textarea
+              class="form-control"
+              id="listingDescription"
+              placeholder="Enter description"
+            ></textarea>
+          </div>
+          <button
+            type="button"
+            class="btn btn-primary"
+            onclick="createListing()"
+          >
+            Create Listing
+          </button>
+        </form>
+      </div>
+
+      <!-- Search Listings -->
+      <div id="searchListingsSection" class="mb-4">
+        <h2>Search Listings</h2>
+        <input
+          type="text"
+          class="form-control mb-2"
+          id="searchQuery"
+          placeholder="Search listings"
+        />
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="searchListings()"
+        >
+          Search
+        </button>
+      </div>
+
+      <!-- Listings Display -->
+      <div id="listingsDisplaySection" class="mb-4">
+        <h2>Listings</h2>
+        <div id="listingsContainer" class="row g-3"></div>
+      </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/avatar.js"></script>
+    <script src="js/dom.js"></script>
+    <script src="js/listings.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
