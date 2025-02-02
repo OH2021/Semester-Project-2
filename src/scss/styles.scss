@@ -1,6 +1,111 @@
-$primary-color: #8eacbe;
+// Variables
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$accent-color: #ffcc00;
+$background-light: #f8f9fa;
+$background-dark: #343a40;
+$text-dark: #212529;
+$text-light: #ffffff;
 
+// Global Styles
 body {
+  font-family: "Roboto", sans-serif;
+  background-color: $background-light;
+  color: $text-dark;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+// Headings
+h1,
+h2 {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+// Forms & Inputs
+.form-control {
+  border: 1px solid #ced4da;
+  padding: 0.75rem;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+
+  &:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+}
+
+// Buttons
+.btn-primary {
   background-color: $primary-color;
-  font-family: Arial, sans-serif;
+  border-color: $primary-color;
+  color: $text-light;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: $text-light;
+
+  &:hover {
+    background-color: darken(#dc3545, 10%);
+  }
+}
+
+// Avatar Section
+#avatarSection {
+  .form-control {
+    max-width: 400px;
+  }
+}
+
+// Listings Section
+#listingsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.auction-card {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+  background: $text-light;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Navbar
+.navbar {
+  background-color: $primary-color;
+
+  .nav-link {
+    color: $text-light;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

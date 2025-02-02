@@ -15,76 +15,81 @@
       <h1 class="text-center">Auction Website</h1>
 
       <!-- Registration Form -->
-      <div id="authSection">
-        <div class="mb-4">
-          <h2>Register</h2>
-          <form id="registerForm">
-            <div class="mb-3">
-              <label for="registerEmail" class="form-label">Email</label>
-              <input
-                type="email"
-                class="form-control"
-                id="registerEmail"
-                placeholder="Enter your stud.noroff.no email"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="registerPassword" class="form-label">Password</label>
-              <input
-                type="password"
-                class="form-control"
-                id="registerPassword"
-                placeholder="Enter your password"
-              />
-            </div>
-            <button
-              type="button"
-              class="btn btn-primary"
-              onclick="registerUser()"
-            >
-              Register
-            </button>
-          </form>
-        </div>
-
-        <!-- Login Form -->
-        <div class="mb-4">
-          <h2>Login</h2>
-          <form id="loginForm">
-            <div class="mb-3">
-              <label for="loginEmail" class="form-label">Email</label>
-              <input
-                type="email"
-                class="form-control"
-                id="loginEmail"
-                placeholder="Enter your email"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="loginPassword" class="form-label">Password</label>
-              <input
-                type="password"
-                class="form-control"
-                id="loginPassword"
-                placeholder="Enter your password"
-              />
-            </div>
-            <button type="button" class="btn btn-primary" onclick="loginUser()">
-              Login
-            </button>
-          </form>
-        </div>
-
-        <!-- Logout Button -->
-        <div class="mb-4">
-          <button type="button" class="btn btn-danger" onclick="logoutUser()">
-            Log Out
+      <div class="mb-4">
+        <h2>Register</h2>
+        <form id="registerForm">
+          <div class="mb-3">
+            <label for="registerName" class="form-label">Full Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="registerName"
+              placeholder="Enter your full name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="registerEmail" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="registerEmail"
+              placeholder="Enter your stud.noroff.no email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="registerPassword" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="registerPassword"
+              placeholder="Enter your password"
+            />
+          </div>
+          <button
+            type="button"
+            class="btn btn-primary"
+            onclick="registerUser()"
+          >
+            Register
           </button>
-        </div>
+        </form>
+      </div>
+
+      <!-- Login Form -->
+      <div class="mb-4">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="loginUser(event)">
+          <div class="mb-3">
+            <label for="loginEmail" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="loginEmail"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="loginPassword" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="loginPassword"
+              placeholder="Enter your password"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+
+      <!-- Logout Button -->
+      <div class="mb-4">
+        <button type="button" class="btn btn-danger" onclick="logoutUser()">
+          Log Out
+        </button>
       </div>
 
       <!-- Avatar Update -->
-      <div id="avatarSection" class="mb-4">
+      <div class="mb-4">
         <h2>Update Avatar</h2>
         <input
           type="text"
@@ -97,8 +102,25 @@
         </button>
       </div>
 
+      <!-- Display User Avatar -->
+      <div class="mb-4">
+        <h2>Your Avatar</h2>
+        <img
+          id="userAvatar"
+          src=""
+          alt="User Avatar"
+          class="img-fluid rounded-circle"
+          style="width: 100px; height: 100px; object-fit: cover"
+        />
+      </div>
+
+      <div id="creditContainer" class="mt-3">
+        <h3>Your Credit</h3>
+        <p>Loading your credit...</p>
+      </div>
+
       <!-- Create Listing -->
-      <div id="createListingSection" class="mb-4">
+      <div class="mb-4">
         <h2>Create Listing</h2>
         <form id="createListingForm">
           <div class="mb-3">
@@ -124,6 +146,11 @@
               placeholder="Enter description"
             ></textarea>
           </div>
+          <!-- Media Files Input -->
+          <div class="mb-3">
+            <label for="mediaFiles" class="form-label">Media Gallery</label>
+            <input type="file" class="form-control" id="mediaFiles" multiple />
+          </div>
           <button
             type="button"
             class="btn btn-primary"
@@ -135,13 +162,13 @@
       </div>
 
       <!-- Search Listings -->
-      <div id="searchListingsSection" class="mb-4">
+      <div class="mb-4">
         <h2>Search Listings</h2>
         <input
           type="text"
-          class="form-control mb-2"
-          id="searchQuery"
+          id="searchInput"
           placeholder="Search listings"
+          oninput="searchListings()"
         />
         <button
           type="button"
@@ -153,15 +180,20 @@
       </div>
 
       <!-- Listings Display -->
-      <div id="listingsDisplaySection" class="mb-4">
+      <div class="mb-4">
         <h2>Listings</h2>
         <div id="listingsContainer" class="row g-3"></div>
+      </div>
+
+      <!-- Listing Details Container -->
+      <div class="mb-4">
+        <h2>Listing Details</h2>
+        <div id="listingDetailsContainer"></div>
       </div>
     </div>
 
     <script src="js/auth.js"></script>
     <script src="js/avatar.js"></script>
-    <script src="js/dom.js"></script>
     <script src="js/listings.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
