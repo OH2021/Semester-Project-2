@@ -2,7 +2,7 @@
 
 ## Description
 
-Auction website
+Auction website with login/logout, profile avatar you can update, look up listings and create own listings.
 
 ## Built With
 
