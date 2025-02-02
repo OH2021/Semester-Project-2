@@ -2,7 +2,7 @@
 
 ## Description
 
-Auction website with login/logout, profile avatar you can update, look up listings and create own listings.
+Auction website with login/logout, profile avatar you can update, look up listings, create own listings, search on listings and bid on other listings.
 
 ## Built With
 
