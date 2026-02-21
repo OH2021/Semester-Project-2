@@ -1,6 +1,6 @@
 # Semester Project 2 – Auction Website
 
-![Project Screenshot]<img width="2545" height="1299" alt="AH-screenshot" src="https://github.com/user-attachments/assets/acd59e70-17e2-430c-b08f-cb4e34a7698f" />
+<img width="2545" height="1299" alt="AH-screenshot" src="https://github.com/user-attachments/assets/acd59e70-17e2-430c-b08f-cb4e34a7698f" />
 
 
 A frontend auction website where registered users can create listings, place bids, and manage their profiles.
