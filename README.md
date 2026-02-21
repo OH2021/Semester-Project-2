@@ -9,7 +9,7 @@ A frontend auction website where registered users can create listings, place bid
 
 ## Description
 
-This project is a fully functional auction platform built as part of Semester Project 2.
+This project is a auction platform built as part of Semester Project 2.
 
 The application allows users with a `stud.noroff.no` email address to register, log in, and interact with auction listings. The platform includes authentication, listing management, bidding functionality, and profile customization.
 
@@ -114,7 +114,7 @@ If you would like to suggest improvements:
 ## Contact
 
 GitHub: https://github.com/OH2021  
-LinkedIn: (Add your LinkedIn profile link here)
+LinkedIn: https://www.linkedin.com/in/ole-henrik-haug-8a17751b9/
 
 ---
 
