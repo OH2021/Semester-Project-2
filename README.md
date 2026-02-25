@@ -65,7 +65,6 @@ cd Semester-Project-2
 
 ## Running
 
-Since this is a static frontend project, you can run it by:
 
 - Opening `index.html` directly in your browser  
 
