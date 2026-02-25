@@ -66,11 +66,11 @@ cd Semester-Project-2
 ## Running
 
 
-- Opening `index.html` directly in your browser  
+- Open `index.html` directly in your browser  
 
 or  
 
-- Using Live Server in VS Code for a better development experience.
+- Use Live Server in VS Code for a better development experience.
 
 If using VS Code:
 
