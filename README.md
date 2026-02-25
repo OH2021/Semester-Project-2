@@ -61,8 +61,6 @@ Navigate into the project folder:
 cd Semester-Project-2
 ```
 
-No additional dependencies are required since this project is built using HTML, CSS, and Vanilla JavaScript.
-
 ---
 
 ## Running
